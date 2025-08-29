@@ -3,14 +3,14 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - prod  
-  workflow_dispatch: 
+      - prod
+  workflow_dispatch:
 
 jobs:
   deploy:
     name: Deploy to VPS
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'  # ou '20' selon votre version
+          node-version: '18' # ou '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -32,31 +32,25 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Add server to known hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
-
       - name: Deploy to server
         env:
-          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
         run: |
           # Créer le dossier de production s'il n'existe pas
-          ssh $VPS_USER@$VPS_HOST "mkdir -p /var/www/prod"
-          
+          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "mkdir -p /var/www/prod"
+
           # Synchroniser les fichiers (exclure node_modules et .git)
-          rsync -avz --delete \
+          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" \
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='.env.local' \
             --exclude='.next/cache' \
             ./ $VPS_USER@$VPS_HOST:/var/www/prod/
-          
+
           # Installer les dépendances de production sur le serveur
-          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
-          
-          # Redémarrer l'application (PM2 ou autre gestionnaire de processus)
-          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 restart itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
+          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
+
+          # Redémarrer l'application (PM2)
+          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 reload itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
