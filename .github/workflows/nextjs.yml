@@ -22,7 +22,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build application
         run: npm run build
@@ -56,7 +56,7 @@ jobs:
             ./ $VPS_USER@$VPS_HOST:/var/www/prod/
           
           # Installer les dépendances de production sur le serveur
-          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --only=production"
+          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
           
           # Redémarrer l'application (PM2 ou autre gestionnaire de processus)
-          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 restart nextjs-app || pm2 start npm --name 'nextjs-app' -- start"
+          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 restart itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
