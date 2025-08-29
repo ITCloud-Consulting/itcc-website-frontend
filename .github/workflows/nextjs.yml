@@ -38,7 +38,7 @@ jobs:
       # Vérifie que la connexion SSH par clé fonctionne
       - name: Test SSH connection
         run: |
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "echo ✅ Connexion SSH OK"
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
 
       # Déploiement
       - name: Deploy to server
@@ -55,4 +55,9 @@ jobs:
 
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
 
-          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd /var/www/prod && pm2 reload itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
+         ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
+          cd /var/www/prod && \
+          pm2 describe itcc-website-frontend > /dev/null \
+          && pm2 reload itcc-website-frontend \
+          || pm2 start npm --name 'itcc-website-frontend' -- start
+        "
