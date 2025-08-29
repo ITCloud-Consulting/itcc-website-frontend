@@ -27,30 +27,32 @@ jobs:
       - name: Build application
         run: npm run build
 
+      # Charge la clé SSH depuis GitHub Secrets
       - name: Setup SSH key
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-
-      - name: Deploy to server
-        env:
-          VPS_HOST: ${{ secrets.VPS_HOST }}
-          VPS_USER: ${{ secrets.VPS_USER }}
         run: |
-          # Créer le dossier de production s'il n'existe pas
-          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "mkdir -p /var/www/prod"
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
-          # Synchroniser les fichiers (exclure node_modules et .git)
-          rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" \
+      # Vérifie que la connexion SSH par clé fonctionne
+      - name: Test SSH connection
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "echo ✅ Connexion SSH OK"
+
+      # Déploiement
+      - name: Deploy to server
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "mkdir -p /var/www/prod"
+
+          rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
             --exclude='node_modules' \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='.env.local' \
             --exclude='.next/cache' \
-            ./ $VPS_USER@$VPS_HOST:/var/www/prod/
+            ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/prod/
 
-          # Installer les dépendances de production sur le serveur
-          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd /var/www/prod && npm ci --legacy-peer-deps --only=production"
 
-          # Redémarrer l'application (PM2)
-          ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 reload itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "cd /var/www/prod && pm2 reload itcc-website-frontend || pm2 start npm --name 'itcc-website-frontend' -- start"
