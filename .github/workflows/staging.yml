@@ -29,7 +29,7 @@ jobs:
           docker-compose down || true
           
           # Construction et démarrage
-          docker-compose up -d --build
+          docker-compose up -d --build 
           
           # Nettoyage des images inutilisées
           docker image prune -f
