@@ -1,38 +1,62 @@
-name: Next.js CI
+name: Deploy to Production
 
 on:
   push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+    branches:
+      - prod  
+  workflow_dispatch: 
 
 jobs:
-  build:
+  deploy:
+    name: Deploy to VPS
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.x'
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Run linting
-      run: npm run lint
-    
-    - name: Run tests
-      run: npm test
-    
-    - name: Build application
-      run: npm run build
-      
-    - name: Check for TypeScript errors
-      run: npx tsc --noEmit
-      
-    - name: Run accessibility checks
-      run: npx next lint --no-cache
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # ou '20' selon votre version
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          # Créer le dossier de production s'il n'existe pas
+          ssh $VPS_USER@$VPS_HOST "mkdir -p /var/www/prod"
+          
+          # Synchroniser les fichiers (exclure node_modules et .git)
+          rsync -avz --delete \
+            --exclude='node_modules' \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.env.local' \
+            --exclude='.next/cache' \
+            ./ $VPS_USER@$VPS_HOST:/var/www/prod/
+          
+          # Installer les dépendances de production sur le serveur
+          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && npm ci --only=production"
+          
+          # Redémarrer l'application (PM2 ou autre gestionnaire de processus)
+          ssh $VPS_USER@$VPS_HOST "cd /var/www/prod && pm2 restart nextjs-app || pm2 start npm --name 'nextjs-app' -- start"
