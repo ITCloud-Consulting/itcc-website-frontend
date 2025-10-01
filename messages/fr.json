@@ -19,24 +19,16 @@
                 "careers": "Carrières",
                 "partners": "Partenaires"
             },
-            "linksHref": {
+            "href": {
                 "about": "/fr/about",
                 "team": "/fr/about#teams",
                 "careers": "/fr/careers",
-                "partners": "/fr/partners",
-                "contact": "/fr/contact"
-
+                "partners": "/fr/partners"
             }
         },
 
-        "footerLinks": {
-            "company": [
-                {"name": "À propos", "href": "/fr/about"},
-                {"name": "Équipe", "href": "/fr/about#teams"}
-            ],
-            "lnk": "/fr/services"
-
-        },
+        
+        "servicesCTA": "/fr/services",
         "services": {
             "title": "Services",
             "web_mobile": "Développement Web & Mobile",

@@ -10,34 +10,34 @@ interface FooterProps {
   locale: Locale
 }
 
-const footerSections = [
-  {
-    title: "Entreprise",
-    links: [
-      { name: "About", href: "about" },
-      { name: "Team", href: "about#teams" },
-      // { name: "Careers", href: "/careers" },
-      // { name: "Partenaires", href: "/partners" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { name: "Web & Mobile Developement", href: "services" },
-      { name: "UI/UX & Graphic Design", href: "services" },
-      { name: "Motion Design & Ads", href: "services" },
-    ],
-  },
-  {
-    title: "",
-    links: [
-      { name: "Virtual Assistant", href: "services" },
-      { name: "Community & Social Media Management", href: "services" },
-      { name: "DevSecOps & Cloud Consulting", href: "services" },
-    ],
-  }
+// const footerSections = [
+//   {
+//     title: "Entreprise",
+//     links: [
+//       { name: "About", href: "/about" },
+//       { name: "Team", href: "about#teams" },
+//       // { name: "Careers", href: "/careers" },
+//       // { name: "Partenaires", href: "/partners" },
+//     ],
+//   },
+//   {
+//     title: "Services",
+//     links: [
+//       { name: "Web & Mobile Developement", href: "services" },
+//       { name: "UI/UX & Graphic Design", href: "services" },
+//       { name: "Motion Design & Ads", href: "services" },
+//     ],
+//   },
+//   {
+//     title: "",
+//     links: [
+//       { name: "Virtual Assistant", href: "services" },
+//       { name: "Community & Social Media Management", href: "services" },
+//       { name: "DevSecOps & Cloud Consulting", href: "services" },
+//     ],
+//   }
 
-]
+// ]
 
 export default function Footer() {
   const locale = useLocale()
@@ -46,8 +46,8 @@ export default function Footer() {
     {
       title: "Entreprise",
       links: [
-        { name: ( t('Footer.company.links.about') ), href: "about" },
-        { name: ( t('Footer.company.links.team') ), href: "about#teams" },
+        { name: ( t('Footer.company.links.about') ), href: ( t('Footer.company.href.about') ) },
+        { name: ( t('Footer.company.links.team') ), href: ( t('Footer.company.href.team') ) },
         // { name: "Careers", href: "/careers" },
         // { name: "Partenaires", href: "/partners" },
       ],
@@ -55,17 +55,17 @@ export default function Footer() {
     {
       title: "Services",
       links: [
-        { name: ( t('Footer.services.web_mobile') ), href: "services" },
-        { name: ( t('Footer.services.ui_ux') ), href: "services" },
-        { name: ( t('Footer.services.motion_ads') ), href: "services" },
+        { name: ( t('Footer.services.web_mobile') ), href: ( t('Footer.servicesCTA') ) },
+        { name: ( t('Footer.services.ui_ux') ), href: ( t('Footer.servicesCTA') ) },
+        { name: ( t('Footer.services.motion_ads') ), href: ( t('Footer.servicesCTA') ) },
       ],
     },
     {
       title: "",
       links: [
-        { name: ( t('Footer.services.virtual_assistant') ), href: "services" },
-        { name: ( t('Footer.services.social_media') ), href: "services" },
-        { name: ( t('Footer.services.devops_cloud') ), href: "services" },
+        { name: ( t('Footer.services.virtual_assistant') ), href: ( t('Footer.servicesCTA') ) },
+        { name: ( t('Footer.services.social_media') ), href: ( t('Footer.servicesCTA') ) },
+        { name: ( t('Footer.services.devops_cloud') ), href: ( t('Footer.servicesCTA') ) },
       ],
     }
   

@@ -18,6 +18,12 @@
                 "team": "Team",
                 "careers": "Careers",
                 "partners": "Partners"
+            },
+            "href": {
+                "about": "/en/about",
+                "team": "/en/about#teams",
+                "careers": "/en/careers",
+                "partners": "/en/partners"
             }
         },
         "services": {
@@ -29,6 +35,7 @@
             "social_media": "Community & Social Media Management",
             "devops_cloud": "DevSecOps & Cloud Consulting"
         },
+        "servicesCTA": "/en/services",
         "solutions": {
             "title": "Solutions",
             "audit": "Technical Audit",
