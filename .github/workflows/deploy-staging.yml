@@ -57,6 +57,6 @@ jobs:
             pm2 stop itcc-website-frontend || true
             rm -rf node_modules
             npm ci --omit=dev --legacy-peer-deps
-            pm2 start npm --name itcc-website-frontend -- start
+            pm2 start npm --name itcc-website-frontend -- start -- -p 3001
             pm2 save
           "
