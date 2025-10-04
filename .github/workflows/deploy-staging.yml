@@ -60,3 +60,11 @@ jobs:
             pm2 start npm --name itcc-website-frontend-staging -- start -- -p 3001
             pm2 save
           "
+
+      # Health check
+      - name: Health check
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "\
+            curl http://127.0.0.1:3001 && \
+            echo 'Health check passed!' \
+          "

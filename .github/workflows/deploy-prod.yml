@@ -57,6 +57,14 @@ jobs:
             pm2 stop itcc-website-frontend || true
             rm -rf node_modules
             npm ci --omit=dev --legacy-peer-deps
-            pm2 start npm --name itcc-website-frontend -- start
+            pm2 start npm --name itcc-website-frontend -- start -- -p 3000
             pm2 save
+          "
+
+      # Health check
+      - name: Health check
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "\
+            curl http://127.0.0.1:3000 && \
+            echo 'Health check passed!' \
           "
