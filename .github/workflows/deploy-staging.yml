@@ -54,9 +54,9 @@ jobs:
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
             cd /var/www/staging/itcc-website-frontend
 
-            pm2 stop itcc-website-frontend || true
+            pm2 stop itcc-website-frontend-staging || true
             rm -rf node_modules
             npm ci --omit=dev --legacy-peer-deps
-            pm2 start npm --name itcc-website-frontend -- start -- -p 3001
+            pm2 start npm --name itcc-website-frontend-staging -- start -- -p 3001
             pm2 save
           "
