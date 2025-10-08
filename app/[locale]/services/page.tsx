@@ -52,7 +52,7 @@ const serviceCategories = [
       {
         name: "Branding",
         description: "Logo, business cards, flyers, brochures, and more.",
-        technologies: ["Photoshop", "Illustrator", "Figma", "Canva"],
+        technologies: ["Photoshop", "Illustrator", "Figma", "Canva", "Pixi AI"],
         pricing: "From 15k€",
       },
       {
@@ -118,13 +118,13 @@ const serviceCategories = [
       {
         name: "Call Center",
         description: "Call center services to handle your daily tasks and appointments.",
-        technologies: ['phone', 'whatsapp', 'telegram', 'discord'],
+        technologies: ['phone', 'whatsapp', 'telegram', 'discord', 'email'],
         pricing: "From 20k€",
       },
       {
         name: "Virtual Assistant",
         description: "Virtual assistant services to handle your daily tasks and appointments.",
-        technologies: [],
+        technologies: ['phone', 'whatsapp', 'telegram', 'discord', 'email'],
         pricing: "From 15k€",
       }
     ],
