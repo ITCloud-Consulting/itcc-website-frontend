@@ -495,7 +495,8 @@
                             "Photoshop",
                             "Illustrator",
                             "Figma",
-                            "Canva"
+                            "Canva",
+                            "Pixi Ai"
                         ],
                         "pricing": "From 15k€"
                     },
@@ -600,7 +601,8 @@
                             "phone",
                             "whatsapp",
                             "telegram",
-                            "discord"
+                            "discord",
+                            "email"
                         ],
                         "pricing": "From 20k€"
                     },
@@ -611,7 +613,8 @@
                             "phone",
                             "whatsapp",
                             "telegram",
-                            "discord"
+                            "discord",
+                            "email"
                         ],
                         "pricing": "From 15k€"
                     }
@@ -785,7 +788,7 @@
                 "client": "DelivX",
                 "duration": "1 days",
                 "team": "1 designer",
-                "links": { "demo": "#", "github": "#", "case": "#" }
+                "links": { "demo": "http://delivx.itcloudconsultings.com", "github": "#", "case": "#" }
             },
             {
                 "id": 7,
@@ -803,7 +806,7 @@
                 "client": "ITPath",
                 "duration": "2 days",
                 "team": "1 designer",
-                "links": { "demo": "#", "github": "#", "case": "#" }
+                "links": { "demo": "https://itpath360.com/", "github": "#", "case": "#" }
             }
 
         ]

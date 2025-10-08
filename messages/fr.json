@@ -499,7 +499,8 @@
                             "Photoshop",
                             "Illustrator",
                             "Figma",
-                            "Canva"
+                            "Canva",
+                            "Pixi Ai"
                         ],
                         "pricing": "À partir de 15k€"
                     },
@@ -607,7 +608,8 @@
                             "téléphone",
                             "whatsapp",
                             "telegram",
-                            "discord"
+                            "discord",
+                            "email"
                         ],
                         "pricing": "À partir de 20k€"
                     },
@@ -618,7 +620,8 @@
                             "téléphone",
                             "whatsapp",
                             "telegram",
-                            "discord"
+                            "discord",
+                            "email"
                         ],
                         "pricing": "À partir de 15k€"
                     }

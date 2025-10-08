@@ -121,7 +121,7 @@ const projects = [
     client: "DelivX",
     duration: "1 days",
     team: "1 designer",
-    links: { demo: "http://delivx.itcloudconsultings.com", github: "#", case: "#" },
+    links: { demo: "#", github: "#", case: "#" },
   },
   {
     id: 7,
@@ -135,7 +135,7 @@ const projects = [
     client: "ITPath",
     duration: "2 days",
     team: "1 designer",
-    links: { demo: "https://itpath360.com/", github: "#", case: "#" },
+    links: { demo: "#", github: "#", case: "#" },
   }
 ]
 
