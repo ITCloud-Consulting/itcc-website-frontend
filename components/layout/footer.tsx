@@ -81,7 +81,6 @@ export default function Footer() {
             <p className="text-slate-600 mb-6 max-w-md">
               { t('Footer.company.description') }
             </p>
-            
           </div>
 
           {footerSections.map((section, index) => (
