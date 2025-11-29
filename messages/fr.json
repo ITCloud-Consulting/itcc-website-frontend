@@ -1005,5 +1005,15 @@
             "privacy": "Politique de Confidentialité",
             "terms": "Conditions d’Utilisation"
         }
+    },
+    "messagePage": {
+        "confirmMessage": "Message envoyé avec succès !",
+        "confirmDescription": "Merci pour votre message. Notre équipe vous contactera sous 24 heures pour discuter de votre projet.",
+        "confirmHeading": "Prochaines étapes :",
+        "firstStep": "Analyse de votre demande par notre équipe",
+        "seccondStep": "Contact sous 24 heures",
+        "thirdStep": "Planification d’un audit technique gratuit",
+        "CTA": "Retour à l’accueil",
+        "ctaDescription": "Question urgente ? Contactez-nous directement"
     }
 }

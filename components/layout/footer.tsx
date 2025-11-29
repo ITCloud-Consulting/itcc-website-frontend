@@ -73,7 +73,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200">
       <div className="2xl:container  max-w-[100%] mx-auto overflow-x-hidden px-6 md:px-12 py-16">
-        <div className="grid lg:grid-cols-6 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-3 group mb-6">
               <img src="/logo.png" alt="ITCloudConsultings" className="w-8/12 h-24 object-contain"/>

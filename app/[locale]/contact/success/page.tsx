@@ -37,26 +37,26 @@ export default function ContactSuccessPage() {
                   <CheckCircle className="w-10 h-10 text-green-600" />
                 </motion.div>
 
-                <h1 className="text-3xl font-bold text-slate-900 mb-4">Message sent successfully!</h1>
+                <h1 className="text-3xl font-bold text-slate-900 mb-4">{ t("messagePage.confirmMessage") }</h1>
 
                 <p className="text-lg text-slate-600 mb-8">
-                  Thank you for your message. Our team will contact you within 24 hours to discuss your project.
+                  { t('messagePage.confirmDescription') }
                 </p>
 
                 <div className="space-y-4 mb-8 text-left bg-slate-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-slate-900">Next steps:</h3>
+                  <h3 className="font-semibold text-slate-900">{ t('messagePage.confirmHeading') }</h3>
                   <ul className="space-y-2 text-slate-600">
                     <li className="flex items-center">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                      Analyse of your request by our team
+                      { t('messagePage.firstStep') }
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                      Contact within 24 hours
+                      { t('messagePage.secondStep') }
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
-                      Free technical audit planning
+                      { t('messagePage.thirdStep') }
                     </li>
                   </ul>
                 </div>
@@ -65,7 +65,7 @@ export default function ContactSuccessPage() {
                   <Link href="/">
                     <Button className="bg-slate-900 hover:bg-slate-800">
                       <Home className="w-4 h-4 mr-2" />
-                      Back to home
+                      { t('messagePage.CTA') }
                     </Button>
                   </Link>
                   {/* <Link href="/blog">
@@ -77,7 +77,7 @@ export default function ContactSuccessPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-slate-200">
-                  <p className="text-sm text-slate-500">Urgent question? Contact us directly:</p>
+                  <p className="text-sm text-slate-500">{ t('messagePage.ctaDescription') }</p>
                   <div className="flex items-center justify-center mt-2">
                     <Mail className="w-4 h-4 mr-2 text-slate-400" />
                     <a href="mailto:support@itcloudconsultings.com" className="text-blue-600 hover:underline">

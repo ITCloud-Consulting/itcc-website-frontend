@@ -12,24 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repo
+      # 1️ Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
+      # 2️ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
 
-      # 3️⃣ Install dependencies & build
+      # 3 Install dependencies & build
       - name: Install & build
         run: |
           npm ci --legacy-peer-deps
           npm run build
 
-      # 4️⃣ Setup SSH key
+      # 4️ Setup SSH key
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
@@ -57,6 +57,19 @@ jobs:
             pm2 stop itcc-website-frontend || true
             rm -rf node_modules
             npm ci --omit=dev --legacy-peer-deps
-            pm2 start npm --name itcc-website-frontend -- start
+            pm2 start npm --name itcc-website-frontend -- start -- -p 3000
             pm2 save
+          "
+      - name: 🩺 Health check (with retry)
+        run: |
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "\
+            for i in {1..10}; do \
+              echo '⏳ Checking health (attempt '$i')...'; \
+              if curl -fs http://localhost:3000; then \
+                echo '✅ App is healthy!'; exit 0; \
+              fi; \
+              sleep 10; \
+            done; \
+            echo '❌ App did not become healthy in time'; \
+            exit 1 \
           "
