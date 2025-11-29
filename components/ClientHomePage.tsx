@@ -225,7 +225,7 @@ const features = [
     key: "communication",
     title: "Transparent Communication",
     description: "We keep you informed at every stage with clear, honest, and timely communication.",
-    image: '/features/7.jpg',
+    image: '/features/75.jpg',
     icon: MessageCircle
   },
   {

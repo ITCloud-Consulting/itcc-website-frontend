@@ -16,6 +16,8 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Calendar, MessageSquare,
 import { useLocale } from "../../../hooks/useLocale"
 import { useTranslation } from "../../../lib/i18n"
 import Navigation from "@/components/Navigation"
+import { usePathname } from "next/navigation"
+import { useRouter } from "next/router"
 
 
 // Translatable lists and methods are defined inside the component via i18n
@@ -104,6 +106,12 @@ export default function ContactPage() {
     setIsSubmitting(false)
 
     // Redirection vers la page de succès
+    const {pathname} = useRouter();
+    const router = useRouter();
+    if (pathname.startsWith("/fr")) {
+      router.push("/fr/contact/success");
+    }else{
+      router.push("/en/contact/success");}
     // window.location.href = "/contact/success"
   }
 

@@ -114,29 +114,29 @@ const projects = [
     title: "DelivX",
     category: "Graphic Design",
     description: "DelivX is mobile marketplace application",
-    image: "/graphic_design/delivx.JPG",
+    image: "/graphic_design/delivX.jpg",
     technologies: ["Illustrator"],
     metrics: { users: "", rating: "", transactions: "" },
     year: "2024",
     client: "DelivX",
-    duration: "1 days",
+    duration: "2 days",
     team: "1 designer",
-    links: { demo: "#", github: "#", case: "#" },
+    links: { demo: "https://www.aspiresld.com/", github: "#", case: "#" },
   },
-  {
+    {
     id: 7,
     title: "ITPath",
     category: "Graphic Design",
-    description: "ITPath is a e-leaning website",
-    image: "/graphic_design/itpath.JPG",
+    description: " ITPath is an e-learning website",
+    image: "/graphic_design/itpath.png",
     technologies: ["Illustrator"],
     metrics: { users: "", rating: "", transactions: "" },
     year: "2024",
     client: "ITPath",
     duration: "2 days",
     team: "1 designer",
-    links: { demo: "#", github: "#", case: "#" },
-  }
+    links: { demo: "https://itpath360.com/", github: "#", case: "#" },
+  },
 ]
 
 export default function PortfolioPage() {
