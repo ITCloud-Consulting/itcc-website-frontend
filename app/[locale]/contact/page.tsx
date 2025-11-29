@@ -16,6 +16,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Calendar, MessageSquare,
 import { useLocale } from "../../../hooks/useLocale"
 import { useTranslation } from "../../../lib/i18n"
 import Navigation from "@/components/Navigation"
+import { Lancelot } from "next/font/google"
 
 
 // Translatable lists and methods are defined inside the component via i18n
@@ -29,6 +30,7 @@ export default function ContactPage() {
     budget: "",
     message: "",
     urgency: "normal",
+    language: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -90,6 +92,7 @@ export default function ContactPage() {
           email: formData.email,
           subject: formData.subject,
           message: `Message: ${formData.message}\nBudget: ${formData.budget}\nUrgency: ${formData.urgency}\nService: ${formData.service}`,
+          language: locale
         }),
       })
 
@@ -104,7 +107,7 @@ export default function ContactPage() {
     setIsSubmitting(false)
 
     // Redirection vers la page de succès
-    // window.location.href = "/contact/success"
+    window.location.href = "/contact/success"
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

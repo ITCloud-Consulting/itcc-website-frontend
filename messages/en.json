@@ -146,7 +146,6 @@
                 }
             }
         },
-           
         "featureSection": {
             "badge": "",
             "title": "Why Choose Us ?",
@@ -650,7 +649,6 @@
     "PortfolioPage": {
         "heading": "Projects & Realizations",
         "description": "Discover our most innovative projects, from complex architectures to custom solutions that transform businesses.",
-      
         "categories": [
             "All",
             "Web",
@@ -671,13 +669,28 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
-                "metrics": { "users": "50K+", "performance": "< 100ms", "uptime": "99.9%" },
+                "technologies": [
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Redis",
+                    "Kubernetes",
+                    "AWS"
+                ],
+                "metrics": {
+                    "users": "50K+",
+                    "performance": "< 100ms",
+                    "uptime": "99.9%"
+                },
                 "year": "2024",
                 "client": "ITPath360",
                 "duration": "8 mois",
                 "team": "6 développeurs",
-                "links": { "demo": "https://itpath360.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://itpath360.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 1,
@@ -689,13 +702,28 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
-                "metrics": { "users": "100K+", "rating": "4.8/5", "transactions": "1M+/mois" },
+                "technologies": [
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Redis",
+                    "Kubernetes",
+                    "AWS"
+                ],
+                "metrics": {
+                    "users": "100K+",
+                    "rating": "4.8/5",
+                    "transactions": "1M+/mois"
+                },
                 "year": "2024",
                 "client": "TradeZenith",
                 "duration": "6 mois",
                 "team": "6 développeurs",
-                "links": { "demo": "https://tradezennith.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://tradezennith.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 2,
@@ -707,13 +735,28 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["React", "Node.js", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
-                "metrics": { "users": "200+", "rating": "4.8/5", "transactions": "1M+/mois" },
+                "technologies": [
+                    "React",
+                    "Node.js",
+                    "PostgreSQL",
+                    "Redis",
+                    "Kubernetes",
+                    "AWS"
+                ],
+                "metrics": {
+                    "users": "200+",
+                    "rating": "4.8/5",
+                    "transactions": "1M+/mois"
+                },
                 "year": "2023",
                 "client": "Aspires LD",
                 "duration": "6 mois",
                 "team": "6 développeurs",
-                "links": { "demo": "https://www.aspiresld.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://www.aspiresld.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 3,
@@ -725,13 +768,23 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["Illustrator"],
-                "metrics": { "users": "", "rating": "", "transactions": "" },
+                "technologies": [
+                    "Illustrator"
+                ],
+                "metrics": {
+                    "users": "",
+                    "rating": "",
+                    "transactions": ""
+                },
                 "year": "2024",
                 "client": "TradeZenith",
                 "duration": "2 days",
                 "team": "1 designer",
-                "links": { "demo": "https://tradezennith.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://tradezennith.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 4,
@@ -743,13 +796,23 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["Illustrator"],
-                "metrics": { "users": "", "rating": "", "transactions": "" },
+                "technologies": [
+                    "Illustrator"
+                ],
+                "metrics": {
+                    "users": "",
+                    "rating": "",
+                    "transactions": ""
+                },
                 "year": "2024",
                 "client": "ITCloudConsultings",
                 "duration": "2 days",
                 "team": "1 designer",
-                "links": { "demo": "https://itcloudconsultings.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://itcloudconsultings.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 5,
@@ -761,13 +824,23 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["Illustrator"],
-                "metrics": { "users": "", "rating": "", "transactions": "" },
+                "technologies": [
+                    "Illustrator"
+                ],
+                "metrics": {
+                    "users": "",
+                    "rating": "",
+                    "transactions": ""
+                },
                 "year": "2024",
                 "client": "Aspires LD",
                 "duration": "2 days",
                 "team": "1 designer",
-                "links": { "demo": "https://www.aspiresld.com/", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "https://www.aspiresld.com/",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 6,
@@ -779,13 +852,23 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["Illustrator"],
-                "metrics": { "users": "", "rating": "", "transactions": "" },
+                "technologies": [
+                    "Illustrator"
+                ],
+                "metrics": {
+                    "users": "",
+                    "rating": "",
+                    "transactions": ""
+                },
                 "year": "2024",
                 "client": "DelivX",
                 "duration": "1 days",
                 "team": "1 designer",
-                "links": { "demo": "#", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "#",
+                    "github": "#",
+                    "case": "#"
+                }
             },
             {
                 "id": 7,
@@ -797,114 +880,119 @@
                 "teamKey": "Team",
                 "metricsKey": "Metrics",
                 "technologiesKey": "Technologies",
-                "technologies": ["Illustrator"],
-                "metrics": { "users": "", "rating": "", "transactions": "" },
+                "technologies": [
+                    "Illustrator"
+                ],
+                "metrics": {
+                    "users": "",
+                    "rating": "",
+                    "transactions": ""
+                },
                 "year": "2024",
                 "client": "ITPath",
                 "duration": "2 days",
                 "team": "1 designer",
-                "links": { "demo": "#", "github": "#", "case": "#" }
+                "links": {
+                    "demo": "#",
+                    "github": "#",
+                    "case": "#"
+                }
             }
-
         ]
-
     },
-    
-  "ContactPage": {
-    "heading": "Let's start your project",
-    "description": "Let's discuss your technical challenges and explore together the most suitable solutions for your objectives.",
-    "form": {
-      "title": "Contact form",
-      "subtitle": "Fill out this form to receive a personalized response within 24 hours.",
-      "fields": {
-        "nameLabel": "Full name *",
-        "namePlaceholder": "John Doe",
-        "emailLabel": "Email *",
-        "emailPlaceholder": "john@company.com",
-        "subjectLabel": "Subject *",
-        "subjectPlaceholder": "Subject",
-        "serviceLabel": "Service concerned *",
-        "servicePlaceholder": "Select a service",
-        "budgetLabel": "Estimated budget",
-        "budgetPlaceholder": "Select a range",
-        "budgetOptions": {
-          "lt10k": "Less than 10k€",
-          "b10_25k": "10k€ - 25k€",
-          "b25_50k": "25k€ - 50k€",
-          "b50_100k": "50k€ - 100k€",
-          "gt100k": "More than 100k€"
+    "ContactPage": {
+        "heading": "Let's start your project",
+        "description": "Let's discuss your technical challenges and explore together the most suitable solutions for your objectives.",
+        "form": {
+            "title": "Contact form",
+            "subtitle": "Fill out this form to receive a personalized response within 24 hours.",
+            "fields": {
+                "nameLabel": "Full name *",
+                "namePlaceholder": "John Doe",
+                "emailLabel": "Email *",
+                "emailPlaceholder": "john@company.com",
+                "subjectLabel": "Subject *",
+                "subjectPlaceholder": "Subject",
+                "serviceLabel": "Service concerned *",
+                "servicePlaceholder": "Select a service",
+                "budgetLabel": "Estimated budget",
+                "budgetPlaceholder": "Select a range",
+                "budgetOptions": {
+                    "lt10k": "Less than 10k€",
+                    "b10_25k": "10k€ - 25k€",
+                    "b25_50k": "25k€ - 50k€",
+                    "b50_100k": "50k€ - 100k€",
+                    "gt100k": "More than 100k€"
+                },
+                "urgencyLabel": "Urgency of the project",
+                "urgencyOptions": {
+                    "low": "Not urgent",
+                    "normal": "Normal",
+                    "high": "Urgent"
+                },
+                "messageLabel": "Project description *",
+                "messagePlaceholder": "Describe your project, its objectives and technical constraints..."
+            },
+            "submit": {
+                "sending": "Sending in progress...",
+                "label": "Send my request"
+            },
+            "success": {
+                "title": "Message sent successfully!",
+                "description": "We will contact you within 24 hours to discuss your project.",
+                "sendAnother": "Send another message"
+            }
         },
-        "urgencyLabel": "Urgency of the project",
+        "methods": {
+            "email": {
+                "title": "Email",
+                "description": "support@itcloudconsultings.com",
+                "action": "Send an email"
+            },
+            "phone": {
+                "title": "Phone",
+                "description": "+1 (706) 581-1963",
+                "action": "Schedule a call"
+            },
+            "appointment": {
+                "title": "Appointment",
+                "description": "Free technical consultation",
+                "action": "Schedule an appointment"
+            },
+            "chat": {
+                "title": "Chat",
+                "description": "Support technical in real time",
+                "action": "Start a conversation"
+            }
+        },
+        "urgencyKey": "Urgency of the project",
         "urgencyOptions": {
-          "low": "Not urgent",
-          "normal": "Normal",
-          "high": "Urgent"
+            "low": "Not urgent",
+            "normal": "Normal",
+            "high": "Urgent"
         },
-        "messageLabel": "Project description *",
-        "messagePlaceholder": "Describe your project, its objectives and technical constraints..."
-      },
-      "submit": {
-        "sending": "Sending in progress...",
-        "label": "Send my request"
-      },
-      "success": {
-        "title": "Message sent successfully!",
-        "description": "We will contact you within 24 hours to discuss your project.",
-        "sendAnother": "Send another message"
-      }
+        "projectDescriptionKey": "Project description",
+        "projectDescriptionPlaceholder": "Describe your project, its objectives and technical constraints...",
+        "buttonLabel": "Send my request",
+        "processing": "Sending in progress...",
+        "servicesKey": "Select a service",
+        "services": [
+            "Audit technical",
+            "Web development",
+            "Mobile application",
+            "Cloud infrastructure",
+            "Security & compliance",
+            "Performance optimization",
+            "Team training",
+            "UI/UX Design",
+            "Graphic Design",
+            "Motion & Ads",
+            "Virtual Assistant",
+            "Community & Social Media Management",
+            "DevSecOps & Cloud Consulting",
+            "Other"
+        ]
     },
-    "methods": {
-      "email": {
-        "title": "Email",
-        "description": "support@itcloudconsultings.com",
-        "action": "Send an email"
-      },
-      "phone": {
-        "title": "Phone",
-        "description": "+1 (706) 581-1963",
-        "action": "Schedule a call"
-      },
-      "appointment": {
-        "title": "Appointment",
-        "description": "Free technical consultation",
-        "action": "Schedule an appointment"
-      },
-      "chat": {
-        "title": "Chat",
-        "description": "Support technical in real time",
-        "action": "Start a conversation"
-      }
-    },
-    "urgencyKey": "Urgency of the project",
-    "urgencyOptions": {
-        "low": "Not urgent",
-        "normal": "Normal",
-        "high": "Urgent"
-    },
-    "projectDescriptionKey": "Project description",
-    "projectDescriptionPlaceholder": "Describe your project, its objectives and technical constraints...",
-    "buttonLabel": "Send my request",
-    "processing": "Sending in progress...",
-
-    "servicesKey": "Select a service",
-    "services": [
-      "Audit technical",
-      "Web development",
-      "Mobile application",
-      "Cloud infrastructure",
-      "Security & compliance",
-      "Performance optimization",
-      "Team training",
-      "UI/UX Design",
-      "Graphic Design",
-      "Motion & Ads",
-      "Virtual Assistant",
-      "Community & Social Media Management",
-      "DevSecOps & Cloud Consulting",
-      "Other"
-    ]
-  }
-,
     "Common": {
         "buttons": {
             "learn_more": "Learn more",
@@ -918,5 +1006,15 @@
             "privacy": "Privacy Policy",
             "terms": "Terms of Service"
         }
+    },
+    "messagePage": {
+        "confirmMessage": "Message sent successfully!",
+        "confirmDescription": "Thank you for your message. Our team will contact you within 24 hours to discuss your project.",
+        "confirmHeading": "Next Steps:",
+        "firstStep": "Analyse of your request by our team",
+        "seccondStep": "Contact within 24hours",
+        "thirdStep": "Free technical audit planning",
+        "CTA": "Back to home",
+        "ctaDescription": "Urgent question? Contact us directly"
     }
 }
