@@ -107,7 +107,7 @@ export default function ContactPage() {
     setIsSubmitting(false)
 
     // Redirection vers la page de succès
-    window.location.href = "/contact/success"
+    window.location.href = `/${locale}/contact/success`
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
