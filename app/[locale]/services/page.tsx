@@ -124,7 +124,7 @@ const serviceCategories = [
       {
         name: "Virtual Assistant",
         description: "Virtual assistant services to handle your daily tasks and appointments.",
-        technologies: [],
+        technologies: ['phone', 'whatsapp', 'telegram', 'discord'],
         pricing: "From 15k€",
       }
     ],
