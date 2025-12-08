@@ -820,7 +820,7 @@
                 "title": "Aspires LD",
                 "category": "Design Graphique",
                 "description": "Aspires LD est un cabinet de conseil financier dédié à aider les particuliers et entreprises à atteindre leurs objectifs financiers. Nos professionnels expérimentés offrent des conseils personnalisés et complets sur les investissements, la planification de la retraite, la gestion budgétaire et l’endettement.",
-                "image": "/graphic_design/aspire.JPG",
+                "image": "/graphic_design/aspire.png",
                 "technologiesKey": "Technologies",
                 "technologies": [
                     "Illustrator"
@@ -848,7 +848,7 @@
                 "title": "DelivX",
                 "category": "Design Graphique",
                 "description": "DelivX est une application de marketplace mobile.",
-                "image": "/graphic_design/delivx.png",
+                "image": "/graphic_design/delivX.png",
                 "technologiesKey": "Technologies",
                 "technologies": [
                     "Illustrator"
