@@ -16,12 +16,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Calendar, MessageSquare,
 import { useLocale } from "../../../hooks/useLocale"
 import { useTranslation } from "../../../lib/i18n"
 import Navigation from "@/components/Navigation"
-<<<<<<< HEAD
-import { usePathname } from "next/navigation"
-import { useRouter } from "next/router"
-=======
 import { Lancelot } from "next/font/google"
->>>>>>> 567c9f70a47d12d8165adbb0fcf5d02193bc2d2d
 
 
 // Translatable lists and methods are defined inside the component via i18n
@@ -112,17 +107,7 @@ export default function ContactPage() {
     setIsSubmitting(false)
 
     // Redirection vers la page de succès
-<<<<<<< HEAD
-    const {pathname} = useRouter();
-    const router = useRouter();
-    if (pathname.startsWith("/fr")) {
-      router.push("/fr/contact/success");
-    }else{
-      router.push("/en/contact/success");}
-    // window.location.href = "/contact/success"
-=======
     window.location.href = `/${locale}/contact/success`
->>>>>>> 567c9f70a47d12d8165adbb0fcf5d02193bc2d2d
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
